@@ -1,5 +1,6 @@
-name: wordpress_flutter
-description: WordPress Blog Native App in Flutter 
+name: starbucks_secret_menu
+description: Top Secret Menu For Starbucks
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -24,15 +25,24 @@ dependencies:
   intl: ^0.16.1
   cached_network_image: ^2.0.0
   provider: ^4.0.5
+  flutter_webview_plugin: ^0.3.11
+  url_launcher: '>=5.4.0 <6.0.0'
+  table_calendar:
+  google_fonts:
+  shared_preferences:
+  font_awesome_flutter:
+  sqflite:
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
-
+  cupertino_icons: ^1.0.0
+  webview_flutter: ^0.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -50,6 +60,7 @@ flutter:
 
   assets:
     - images/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

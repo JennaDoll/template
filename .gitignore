@@ -22,12 +22,26 @@
 
 # Flutter/Dart/Pub related
 **/doc/api/
+#added below
+**/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
 /build/
+
+#added
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+#added above
 
 # Android related
 **/android/**/gradle-wrapper.jar

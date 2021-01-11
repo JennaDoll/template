@@ -8,6 +8,8 @@
          FlutterApplication and put your custom class here. -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
+
+
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="wordpress_flutter"
@@ -15,6 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
+            android:usesCleartextTraffic="true"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
