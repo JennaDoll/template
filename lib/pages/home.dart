@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
 
-  get url => "http://52.26.206.71/";
+  get url => "http://starbucks.social-goat.com/";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-        title: Text(TITLE),
+        title: Text("Secret Menu"),
         titleSpacing: 8.0,
         actions: <Widget>[
           GestureDetector(
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           HomeTab(),
           Calendar(),
           CategoriesTab(),
-          WebViewContainer(url),
+          //WebViewContainer(url),
 
 
         ],
@@ -66,13 +66,13 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.menu),
             title: Text('Browse Secret Menu'),
           ),
-          BottomNavigationBarItem(
+       /*   BottomNavigationBarItem(
             icon: Icon(Icons.home),
             title: Text('Home Menu'),
 
 
 
-          ),
+          ),*/
         ],
       ),
     );

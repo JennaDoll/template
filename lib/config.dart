@@ -1,7 +1,7 @@
 const String TITLE = "Starbucks Secret Menu";
 
 /// last slash ' / ' is mandatory
-const String URL = "http://52.26.206.71/";
+const String URL = "http://starbucks.social-goat.com/";
 
 
 //https://www.starwars.com/news
