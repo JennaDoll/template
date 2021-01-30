@@ -82,6 +82,7 @@ class _PostsListState extends State<PostsList> {
           child: CircularProgressIndicator(),
         ),
       ),
+
     );
   }
 }

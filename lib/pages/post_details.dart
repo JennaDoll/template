@@ -1,3 +1,4 @@
+import 'package:facebook_audience_network/ad/ad_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -43,11 +44,17 @@ class PostDetails extends StatelessWidget {
                             colors: [Colors.black, Colors.transparent],
                           ),
                         ),
-                      ),
+
+                          ),
+
+
                     ),
+
                     Positioned(
                       bottom: 0,
                       child: Author(post: post),
+
+
                     ),
                     Positioned(
                       bottom: 35.0,
@@ -64,13 +71,39 @@ class PostDetails extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          )),
+
+                          )
+
+                      ),
+
+
                     ),
+
                     Positioned(
                       bottom: 0,
                       right: 0,
                       child: CategoryPill(post: post),
                     ),
+                    Container(
+                      child:
+                      Positioned (
+                        //bottom: 0,
+                        top:35,
+                        left:55,
+
+
+                        child: FacebookBannerAd(
+                          bannerSize: BannerSize.STANDARD,
+                          keepAlive: true,
+                          placementId: "1347549032304210_1348086808917099",
+
+                        ),
+
+
+
+                      ),
+                    ),
+
                   ],
                 ),
               ),
@@ -89,6 +122,7 @@ class PostDetails extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }

@@ -52,5 +52,6 @@ class _CategoriesTabState extends State<CategoriesTab> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => SingleCategory(category)));
       },
     );
+
   }
 }

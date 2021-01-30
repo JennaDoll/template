@@ -32,6 +32,7 @@ dependencies:
   shared_preferences:
   font_awesome_flutter:
   sqflite:
+  facebook_audience_network: ^0.8.0
 
 
 

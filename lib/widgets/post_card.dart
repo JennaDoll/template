@@ -67,7 +67,8 @@ class PostCard extends StatelessWidget {
                   ),
                   Positioned(
                     child: Hero(tag: '${post.id}_author', child: Author(post: post)),
-                  )
+                  ),
+
                 ],
               ),
             ),
