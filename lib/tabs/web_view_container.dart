@@ -1,49 +1,56 @@
-import 'package:facebook_audience_network/ad/ad_banner.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+
 class WebViewContainer extends StatefulWidget {
   final url;
   WebViewContainer(this.url);
   @override
-  createState() => _WebViewContainerState(this.url);
+  createState() => _WebViewContainer(this.url);
+
 }
-class _WebViewContainerState extends State<WebViewContainer> {
+
+class _WebViewContainer extends State<WebViewContainer> {
+  final Completer<WebViewController> _controller = Completer<WebViewController>();
   var _url;
   final _key = UniqueKey();
-  _WebViewContainerState(this._url);
+  _WebViewContainer(this._url);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-          children: [
-            Column(
-              children: [
-                Expanded(
-                    child: WebView(
-                        key: _key,
-                        javascriptMode: JavascriptMode.unrestricted,
-                        initialUrl: _url)),
 
-                /*FacebookBannerAd(
-                  bannerSize: BannerSize.STANDARD,
-                  keepAlive: true,
-                  placementId: "IMG_16_9_APP_INSTALL#1347549032304210_1347550045637442",
-
-                ),*/
-
-
-
-              ],
+      body: Column(
+        children: [SizedBox(height: 30),
+          Expanded(
+            child: WebView(
+              initialUrl: _url,
+              javascriptMode: JavascriptMode.unrestricted,
+              onWebViewCreated: (WebViewController webViewController) {
+                _controller.complete(webViewController);
+              },
             ),
+          )
+        ],
+      ),
+      floatingActionButton: FutureBuilder<WebViewController>(
+          future: _controller.future,
+          builder: (BuildContext context,
+              AsyncSnapshot<WebViewController> controller) {
+            if (controller.hasData) {
+              return FloatingActionButton(
+                  heroTag: "floating",
+                  child: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    controller.data.goBack();
+                  });
+            }
 
-
-          ],
-
-
-        )
-
+            return Container();
+          }
+      ),
     );
   }
 }
-
-

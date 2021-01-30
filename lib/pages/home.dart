@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:starbucks_secret_menu/tabs/calendar_tab.dart';
 import 'package:starbucks_secret_menu/tabs/web_view_container.dart';
+import 'package:starbucks_secret_menu/tabs/webview_sizedbox.dart';
 
 import '../config.dart';
 import '../services/theme_changer.dart';
@@ -51,9 +52,11 @@ class _HomePageState extends State<HomePage> {
               index: currentIndex,
               children: <Widget>[
                 HomeTab(),
-                Calendar(),
+               // Calendar(),
                 CategoriesTab(),
                 WebViewContainer(url),
+                WebViewContainerSizedBox("https://www.starbucks.com/menu"),
+
 
               ],
 
@@ -102,19 +105,23 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.featured_play_list),
-            title: Text('Featured Drinks'),
+            title: Text('Featured'),
           ),
-          BottomNavigationBarItem(
+       /*   BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today_sharp),
             title: Text('Record Visits'),
-          ),
+          ),*/
           BottomNavigationBarItem(
             icon: Icon(Icons.menu),
-            title: Text('Browse Secret Menu'),
+            title: Text('Browse'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home Menu'),
+            icon: Icon(Icons.person),
+            title: Text('Network'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_drink_sharp),
+            title: Text('Order'),
           ),
         ],
 
